@@ -1,2 +1,3 @@
 /test/dummy/log/*
 /test/dummy/tmp/*
+/test/dummy/db/*.sqlite3
