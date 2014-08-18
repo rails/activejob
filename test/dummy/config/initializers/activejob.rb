@@ -39,8 +39,7 @@ when 'queue_classic'
   %x{#{"PGPASSWORD=\"#{pass}\"" if pass} psql -c 'drop database "#{db}"' -U #{user} -t template1}
   %x{#{"PGPASSWORD=\"#{pass}\"" if pass} psql -c 'create database "#{db}"' -U #{user} -t template1}
   QC::Setup.create
-when 'sidekiq'
-  ActiveJob::Base.queue_adapter = :sidekiq
+
 when 'sneakers'
   ActiveJob::Base.queue_adapter = :sneakers
   Sneakers.configure  :heartbeat => 2,
